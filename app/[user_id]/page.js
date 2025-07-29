@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function UserProfile({ params }) {
   const { user_id } = await params;
 
@@ -51,6 +53,13 @@ export default async function UserProfile({ params }) {
         >
           {data.website}
         </a>
+
+        <div className="mb-4">
+         <Link href={`/${user_id}/albums`}> 
+          <button>Albümleri Gör</button>
+         </Link>
+        </div>
+        
       </div>
       <div className="mb-4">
         <strong>Adres:</strong>
