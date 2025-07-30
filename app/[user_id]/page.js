@@ -56,7 +56,7 @@ export default async function UserProfile({ params }) {
 
         <div className="mb-4">
          <Link href={`/${user_id}/albums`}> 
-          <button>Albümleri Gör</button>
+          <button className="bg-purple-400 w-29.5 text-amber-50 p-1 rounded-2xl hover:bg-sky-700 mt-3 ">Albümleri Gör</button>
          </Link>
         </div>
         
