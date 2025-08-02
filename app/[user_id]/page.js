@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default async function UserProfile({ params }) {
   const { user_id } = await params;
 
@@ -19,9 +21,9 @@ export default async function UserProfile({ params }) {
   }
 
   return (
-    <div className="container mx-auto p-8 bg-white rounded-xl shadow-md font-sans">
+    <div className="flex flex-col container mx-auto p-8 bg-white rounded-xl shadow-md font-sans">
       <div className="flex items-center mb-4">
-        <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-3xl font-bold mr-4 select-none">
+        <div className="w-16 h-16 rounded-full bg-pink-600 flex items-center justify-center text-white text-3xl font-bold mr-4 select-none">
           {data.name?.charAt(0)}
         </div>
         <div>
@@ -70,6 +72,12 @@ export default async function UserProfile({ params }) {
           </span>
         </div>
       </div>
+      <Link
+        href={`/${user_id}/albums`}
+        className="my-8 px-4 py-2 bg-blue-600 text-white font-semibold text-center rounded hover:bg-blue-700 transition-colors w-fit"
+      >
+        Albümleri Görüntüle
+      </Link>
       <div className="mb-4">
         <strong>Harita:</strong>
         <div
