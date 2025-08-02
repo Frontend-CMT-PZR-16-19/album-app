@@ -23,7 +23,7 @@ export default async function UserProfile({ params }) {
   return (
     <div className="flex flex-col container mx-auto p-8 bg-white rounded-xl shadow-md font-sans">
       <div className="flex items-center mb-4">
-        <div className="w-16 h-16 rounded-full bg-pink-600 flex items-center justify-center text-white text-3xl font-bold mr-4 select-none">
+        <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-3xl font-bold mr-4 select-none">
           {data.name?.charAt(0)}
         </div>
         <div>
