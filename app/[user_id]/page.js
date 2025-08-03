@@ -1,18 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default async function UserProfile({ params }) {
-  const { user_id } = await params;
+export default function UserProfile() {
+  const { user_id } = useParams();
+  const [data, setData] = useState();
 
-  try {
-    let response = await fetch(
-      `https://jsonplaceholder.typicode.com/users/${user_id}`
-    );
-    var data = await response.json();
-  } catch (error) {
-    console.log(error);
-  }
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/users/${user_id}`
+        );
+        const userData = await response.json();
+        setData(userData);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getData();
+  }, [user_id]);
 
-  if (!data.id) {
+  if (!data?.id) {
     return (
       <div className="flex justify-center text-6xl">
         Kullanıcı bilgileri yüklenemedi.
