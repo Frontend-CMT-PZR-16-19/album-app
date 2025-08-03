@@ -13,7 +13,6 @@ export default async function UserAlbums({ params }) {
   }
 
   return (
-    // Display user albums as gallery view
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 container mx-auto p-8">
       {data.map((album) => (
         <AlbumCard key={album.id} album={album} />
