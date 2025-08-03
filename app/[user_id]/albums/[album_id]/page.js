@@ -23,3 +23,14 @@ export default function UserProfile() {
     getData();
   }, [user_id]);
 
+  return (
+    <div className="flex flex-col container mx-auto p-8 bg-white rounded-xl shadow-md font-sans">
+      {data ? (
+        <div className="flex items-center mb-4">
+          <h1 className="text-2xl font-bold">{data.name}</h1>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
